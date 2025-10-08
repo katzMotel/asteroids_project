@@ -35,7 +35,10 @@ def main():
                 sys.stdout.flush()
                 pygame.quit()
                 sys.exit()
-
+            for s in shots:
+                if s.collide(a):
+                    a.kill()
+                    s.kill()
         for d in drawable:
             d.draw(screen)
         pygame.display.flip()
